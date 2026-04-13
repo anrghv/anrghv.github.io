@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications — Anuj Raghav</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .pub-list { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2.5rem; }
+    .pub-item {
+      background: var(--white);
+      border: 1px solid var(--grey-1);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.8rem;
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: 1.5rem;
+      align-items: start;
+      transition: all var(--trans);
+      box-shadow: var(--shadow-sm);
+    }
+    .pub-item:hover {
+      border-color: rgba(26,79,170,0.25);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+    .pub-year {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--red);
+      padding-top: 0.2rem;
+      text-align: center;
+      border-right: 1.5px solid var(--grey-1);
+      padding-right: 1.5rem;
+    }
+    .pub-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--navy-2);
+      line-height: 1.35;
+      margin-bottom: 0.35rem;
+    }
+    .pub-authors {
+      font-size: 0.83rem;
+      color: var(--grey-3);
+      margin-bottom: 0.25rem;
+    }
+    .pub-venue {
+      font-size: 0.82rem;
+      color: var(--blue-mid);
+      font-style: italic;
+      margin-bottom: 0.6rem;
+    }
+    .pub-type {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 2rem;
+      flex-shrink: 0;
+    }
+    .pub-type--talk  { background: rgba(26,79,170,0.1);  color: var(--blue-mid); }
+    .pub-type--thesis { background: rgba(232,50,10,0.08); color: var(--red); }
+
+    .section-note {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--grey-2);
+      letter-spacing: 0.05em;
+      margin-top: 2.5rem;
+      padding: 1rem 1.4rem;
+      background: var(--off-white);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--grey-1);
+    }
+
+    @media (max-width: 600px) {
+      .pub-item { grid-template-columns: 1fr; gap: 0.6rem; }
+      .pub-year { border-right: none; padding-right: 0; text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Nav ─────────────────────────────────────────── -->
+  <nav class="nav">
+    <a href="index.html" class="nav__brand">Anuj <span>Raghav</span></a>
+    <ul class="nav__links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav__menu-btn" onclick="toggleMenu()" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+  <div class="nav__mobile" id="mobileMenu">
+    <a href="index.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="cv.html">CV</a>
+    <a href="publications.html">Publications</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ─── Page header ──────────────────────────────────── -->
+  <header class="page-header">
+    <div class="page-header__inner">
+      <span class="label label--light">Publications</span>
+      <h1 class="heading heading--light" style="font-size: clamp(2.2rem,5vw,3.5rem);">Talks &<br>Publications</h1>
+      <div class="rule"></div>
+      <p class="lead lead--light">Selected talks, theses, and academic contributions.</p>
+    </div>
+  </header>
+
+  <!-- ─── Publications ─────────────────────────────────── -->
+  <section class="section section--white">
+    <div class="container container--narrow">
+
+      <div class="reveal">
+        <span class="label">Talks</span>
+      </div>
+      <div class="pub-list">
+        <div class="pub-item reveal">
+          <div class="pub-year">2025</div>
+          <div>
+            <div class="pub-title">H → WW* → eμ Measurement with CMS 2016 Ultra-Legacy Open Data and the Scikit-HEP Stack</div>
+            <div class="pub-authors">Anuj Raghav, David Lange, Peter Elmer</div>
+            <div class="pub-venue">Conference on Computing in High Energy and Nuclear Physics (CHEP 2025), Bangkok, Thailand</div>
+            <div class="tags">
+              <span class="tag">Contributed Talk</span>
+              <span class="tag tag--blue">CMS Open Data</span>
+              <span class="tag tag--blue">Scikit-HEP</span>
+            </div>
+          </div>
+          <div><span class="pub-type pub-type--talk">Talk</span></div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;" class="reveal">
+        <span class="label">Theses</span>
+      </div>
+      <div class="pub-list">
+        <div class="pub-item reveal">
+          <div class="pub-year">2024</div>
+          <div>
+            <div class="pub-title">Data Analysis of the Drell-Yan Process at the CMS Experiment</div>
+            <div class="pub-authors">Anuj Raghav</div>
+            <div class="pub-venue">M.Sc. Thesis — Department of Physics & Astrophysics, University of Delhi</div>
+            <div class="tags">
+              <span class="tag">M.Sc. Thesis</span>
+              <span class="tag tag--blue">CMS Run 2</span>
+              <span class="tag tag--blue">Drell-Yan</span>
+              <span class="tag tag--blue">QCD</span>
+            </div>
+          </div>
+          <div><span class="pub-type pub-type--thesis">Thesis</span></div>
+        </div>
+      </div>
+
+      <p class="section-note reveal">
+        More publications and preprints will be listed here as the CHEP proceedings and HSF-India reports become available.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ─── Footer ───────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer__text">
+      © 2026 <a href="index.html">Anuj Raghav</a> &nbsp;·&nbsp;
+      HSF-India Fellow, Princeton University &nbsp;·&nbsp;
+      <a href="https://github.com/anujraghav252" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — Anuj Raghav</title>
+  <meta name="description" content="Research projects by Anuj Raghav — H→WW NanoAOD analysis, Drell-Yan at CMS, ML in HEP.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Project detail cards ────────────────────────── */
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--grey-1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2.5rem;
+      transition: box-shadow var(--trans);
+    }
+    .project-card:hover { box-shadow: var(--shadow-md); }
+    .project-card__header {
+      padding: 2.2rem 2.5rem 1.6rem;
+      border-bottom: 1px solid var(--grey-1);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .project-card__number {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.4rem;
+    }
+    .project-card__title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy-2);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .project-card__subtitle {
+      font-size: 0.88rem;
+      color: var(--grey-2);
+      font-style: italic;
+    }
+    .project-card__links { display: flex; gap: 0.6rem; flex-shrink: 0; }
+    .project-card__body { padding: 2rem 2.5rem; }
+    .project-card__section {
+      margin-bottom: 1.8rem;
+    }
+    .project-card__section:last-child { margin-bottom: 0; }
+    .project-card__section-title {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--grey-3);
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--grey-1);
+    }
+    .project-card__text {
+      font-size: 0.93rem;
+      color: var(--grey-3);
+      line-height: 1.8;
+    }
+    .project-card__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .project-card__list li {
+      font-size: 0.9rem;
+      color: var(--grey-3);
+      line-height: 1.7;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .project-card__list li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0.55rem;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+    .project-card__footer {
+      padding: 1.2rem 2.5rem;
+      background: var(--off-white);
+      border-top: 1px solid var(--grey-1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── Interest cards ──────────────────────────────── */
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+    .interest-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      transition: all var(--trans);
+    }
+    .interest-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.13);
+      transform: translateY(-2px);
+    }
+    .interest-card__icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+    .interest-card__title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .interest-card__desc {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 640px) {
+      .project-card__header { flex-direction: column; }
+      .project-card__body,
+      .project-card__header,
+      .project-card__footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Nav ─────────────────────────────────────────── -->
+  <nav class="nav">
+    <a href="index.html" class="nav__brand">Anuj <span>Raghav</span></a>
+    <ul class="nav__links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav__menu-btn" onclick="toggleMenu()" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+  <div class="nav__mobile" id="mobileMenu">
+    <a href="index.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="cv.html">CV</a>
+    <a href="publications.html">Publications</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ─── Page header ──────────────────────────────────── -->
+  <header class="page-header">
+    <div class="page-header__inner">
+      <span class="label label--light">Research</span>
+      <h1 class="heading heading--light" style="font-size: clamp(2.2rem,5vw,3.5rem);">Projects & Work</h1>
+      <div class="rule"></div>
+      <p class="lead lead--light">
+        My research focuses on Higgs boson measurements and QCD processes at the LHC,
+        using CMS Open Data and modern Python-based analysis frameworks.
+      </p>
+    </div>
+  </header>
+
+  <!-- ─── Projects ─────────────────────────────────────── -->
+  <section class="section section--white">
+    <div class="container">
+
+      <!-- Project 01 -->
+      <div class="project-card reveal">
+        <div class="project-card__header">
+          <div>
+            <div class="project-card__number">Project 01 &nbsp;·&nbsp; HSF-India Fellowship</div>
+            <h2 class="project-card__title">H → WW* → eμ + MET Analysis</h2>
+            <p class="project-card__subtitle">Using CMS 2016 Ultra-Legacy NanoAOD Open Data</p>
+          </div>
+          <div class="project-card__links">
+            <a href="https://github.com/anujraghav252/H-to-WW-NanoAOD-analysis" target="_blank" class="btn btn--dark" style="font-size:0.82rem; padding: 0.5rem 1rem;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://h-to-ww-nanoaod-analysis.readthedocs.io/" target="_blank" class="btn btn--ghost" style="font-size:0.82rem; padding: 0.5rem 1rem;">Docs</a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__section">
+            <div class="project-card__section-title">Overview</div>
+            <p class="project-card__text">
+              Developing a complete analysis pipeline for the Higgs boson decaying into two W bosons
+              in the opposite-sign, different-flavour (eμ) final state via the ggH production channel.
+              The project uses CMS 2016 Ultra-Legacy Open Data to probe Standard Model physics while
+              demonstrating the scope of LHC Open Data for education and research.
+            </p>
+          </div>
+          <div class="project-card__section">
+            <div class="project-card__section-title">Physics Strategy</div>
+            <ul class="project-card__list">
+              <li><strong>Kinematic Discrimination</strong> — Higgs Transverse Mass (m<sub>T</sub>) as primary discriminant between signal and backgrounds.</li>
+              <li><strong>Spin Correlation</strong> — Small opening angle Δφ(eμ) exploited to separate spin-0 Higgs decays from continuum WW production.</li>
+              <li><strong>Background Suppression</strong> — b-jet veto to suppress top-quark (tt̄) backgrounds; MET requirements to reject Drell-Yan processes.</li>
+              <li><strong>Jet Categorisation</strong> — Events sorted into orthogonal 0-jet, 1-jet, and 2-jet bins to isolate gluon-fusion signal regions.</li>
+              <li><strong>Control Regions</strong> — Dedicated Top and Drell-Yan control regions to normalise backgrounds directly from data.</li>
+            </ul>
+          </div>
+          <div class="project-card__section">
+            <div class="project-card__section-title">Technical Pipeline</div>
+            <ul class="project-card__list">
+              <li><strong>Core Stack</strong> — Uproot (I/O), Awkward Array (jagged structures), Vector (4-vector arithmetic), Hist (yield accumulation).</li>
+              <li><strong>Distributed Computing</strong> — Dask for scalable parallel processing of millions of NanoAOD events.</li>
+              <li><strong>Statistical Inference</strong> — CMS Combine for simultaneous profile likelihood fits; achieved r = 1.00 ± 0.71, 1.4σ significance.</li>
+              <li><strong>Scale Factors</strong> — Trigger, lepton ID, and isolation corrections applied to simulation weights.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-card__footer">
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">uproot</span>
+            <span class="tag">awkward-array</span>
+            <span class="tag">Dask</span>
+            <span class="tag">CMS Combine</span>
+            <span class="tag">NanoAOD</span>
+            <span class="tag">HSF-India</span>
+          </div>
+          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--grey-2); white-space: nowrap;">2024 – Present</span>
+        </div>
+      </div>
+
+      <!-- Project 02 -->
+      <div class="project-card reveal">
+        <div class="project-card__header">
+          <div>
+            <div class="project-card__number">Project 02 &nbsp;·&nbsp; M.Sc. Thesis</div>
+            <h2 class="project-card__title">Drell-Yan Process at CMS</h2>
+            <p class="project-card__subtitle">Data Analysis of Z/γ* → ℓℓ at the CMS Experiment</p>
+          </div>
+          <div class="project-card__links">
+            <a href="https://github.com/anujraghav252/Drell-Yan-analysis" target="_blank" class="btn btn--dark" style="font-size:0.82rem; padding: 0.5rem 1rem;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__section">
+            <div class="project-card__section-title">Overview</div>
+            <p class="project-card__text">
+              Master's thesis centred on the Drell-Yan process at the LHC, working with real
+              experimental and Run 2 Monte Carlo data from the CMS experiment to study Standard
+              Model processes. The analysis focused on the Z → μμ channel, isolating a clean
+              Z boson signal from dominant backgrounds.
+            </p>
+          </div>
+          <div class="project-card__section">
+            <div class="project-card__section-title">Analysis Highlights</div>
+            <ul class="project-card__list">
+              <li><strong>Signal Extraction</strong> — Isolation of the Z mass peak through precision event selection and background suppression.</li>
+              <li><strong>Event Selection</strong> — Optimised kinematic cuts, lepton isolation criteria, and data quality requirements.</li>
+              <li><strong>Background Rejection</strong> — Suppression of simulated and electroweak backgrounds to obtain a clean signal region.</li>
+              <li><strong>Statistical Analysis</strong> — Signal significance evaluation and distribution properties using CMS Run-2 MC samples.</li>
+            </ul>
+          </div>
+          <div class="project-card__section">
+            <div class="project-card__section-title">Technical Implementation</div>
+            <p class="project-card__text">
+              C++-based ROOT scripts for event filtering, selection, and histogram production.
+              Structured workflows from initial data handling to final statistical interpretation,
+              providing a foundation in collider data analysis and Monte Carlo validation.
+            </p>
+          </div>
+        </div>
+        <div class="project-card__footer">
+          <div class="tags">
+            <span class="tag">C++</span>
+            <span class="tag">ROOT</span>
+            <span class="tag">CMS Run 2</span>
+            <span class="tag">Monte Carlo</span>
+            <span class="tag">QCD</span>
+            <span class="tag">Electroweak</span>
+          </div>
+          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--grey-2); white-space: nowrap;">2023 – 2024</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Broader Interests ─────────────────────────────── -->
+  <section class="section section--navy" style="position: relative; overflow: hidden;">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.022) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;"></div>
+    <div class="container" style="position:relative;">
+      <div class="reveal">
+        <span class="label label--light">Broader Interests</span>
+        <h2 class="heading heading--light">What I'm Curious About</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="interest-grid">
+        <div class="interest-card reveal">
+          <div class="interest-card__icon">🤖</div>
+          <div class="interest-card__title">AI & ML in HEP</div>
+          <div class="interest-card__desc">How machine learning is reshaping signal extraction, anomaly detection, and the future of BSM searches at the LHC.</div>
+        </div>
+        <div class="interest-card reveal reveal-delay-1">
+          <div class="interest-card__icon">🌐</div>
+          <div class="interest-card__title">Open Science</div>
+          <div class="interest-card__desc">Democratising collider physics through open data, reproducible pipelines, and tools accessible to researchers without full collaboration access.</div>
+        </div>
+        <div class="interest-card reveal reveal-delay-2">
+          <div class="interest-card__icon">🔭</div>
+          <div class="interest-card__title">Beyond Standard Model</div>
+          <div class="interest-card__desc">New physics searches — extended Higgs sectors, dark matter mediators, and precision measurements probing BSM effects.</div>
+        </div>
+        <div class="interest-card reveal reveal-delay-3">
+          <div class="interest-card__icon">⚙️</div>
+          <div class="interest-card__title">HEP Computing</div>
+          <div class="interest-card__desc">Next-generation columnar analysis tools, distributed computing with Dask, and the HL-LHC data challenge.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ───────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer__text">
+      © 2026 <a href="index.html">Anuj Raghav</a> &nbsp;·&nbsp;
+      HSF-India Fellow, Princeton University &nbsp;·&nbsp;
+      <a href="https://github.com/anujraghav252" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
