@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     /* ── Project detail cards ────────────────────────── */
     .project-card {
@@ -154,7 +155,7 @@
       <li><a href="index.html">About</a></li>
       <li><a href="research.html" class="active">Research</a></li>
       <li><a href="cv.html">CV</a></li>
-      <li><a href="publications.html">Publications</a></li>
+      <!-- <li><a href="publications.html">Publications</a></li> -->
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav__menu-btn" onclick="toggleMenu()" aria-label="Menu">
@@ -165,7 +166,7 @@
     <a href="index.html">About</a>
     <a href="research.html">Research</a>
     <a href="cv.html">CV</a>
-    <a href="publications.html">Publications</a>
+    <!-- <a href="publications.html">Publications</a> -->
     <a href="contact.html">Contact</a>
   </div>
 
@@ -176,7 +177,7 @@
       <h1 class="heading heading--light" style="font-size: clamp(2.2rem,5vw,3.5rem);">Projects & Work</h1>
       <div class="rule"></div>
       <p class="lead lead--light">
-        My research focuses on Higgs boson measurements and QCD processes at the LHC,
+        I am currently working on Higgs boson measurements at the LHC,
         using CMS Open Data and modern Python-based analysis frameworks.
       </p>
     </div>
@@ -190,8 +191,8 @@
       <div class="project-card reveal">
         <div class="project-card__header">
           <div>
-            <div class="project-card__number">Project 01 &nbsp;·&nbsp; HSF-India Fellowship</div>
-            <h2 class="project-card__title">H → WW* → eμ + MET Analysis</h2>
+            <div class="project-card__number">Project 01 &nbsp;·&nbsp; HSF-India Project</div>
+            <h2 class="project-card__title">Higgs to WW Analysis</h2>
             <p class="project-card__subtitle">Using CMS 2016 Ultra-Legacy NanoAOD Open Data</p>
           </div>
           <div class="project-card__links">
@@ -207,19 +208,19 @@
             <div class="project-card__section-title">Overview</div>
             <p class="project-card__text">
               Developing a complete analysis pipeline for the Higgs boson decaying into two W bosons
-              in the opposite-sign, different-flavour (eμ) final state via the ggH production channel.
+              in the opposite-sign, different-flavour (electron-muon) final state via the ggH production channel.
               The project uses CMS 2016 Ultra-Legacy Open Data to probe Standard Model physics while
-              demonstrating the scope of LHC Open Data for education and research.
+              demonstrating the scope of CERN Open Data for education and research.
             </p>
           </div>
           <div class="project-card__section">
-            <div class="project-card__section-title">Physics Strategy</div>
+            <div class="project-card__section-title">Analysis Highlights</div>
             <ul class="project-card__list">
-              <li><strong>Kinematic Discrimination</strong> — Higgs Transverse Mass (m<sub>T</sub>) as primary discriminant between signal and backgrounds.</li>
-              <li><strong>Spin Correlation</strong> — Small opening angle Δφ(eμ) exploited to separate spin-0 Higgs decays from continuum WW production.</li>
-              <li><strong>Background Suppression</strong> — b-jet veto to suppress top-quark (tt̄) backgrounds; MET requirements to reject Drell-Yan processes.</li>
-              <li><strong>Jet Categorisation</strong> — Events sorted into orthogonal 0-jet, 1-jet, and 2-jet bins to isolate gluon-fusion signal regions.</li>
-              <li><strong>Control Regions</strong> — Dedicated Top and Drell-Yan control regions to normalise backgrounds directly from data.</li>
+                <li><strong>Analysis Pipeline</strong> — End-to-end reconstruction of \(H \to WW \to e^\pm\mu^\mp\) (ggH) using CMS Open Data, from trigger selection to final-state object definition.</li>
+                <li><strong>Object Reconstruction</strong> — Implementation of lepton identification, isolation criteria, and missing transverse energy \( E_{\text{T}}^{\text{miss}} \) reconstruction for neutrino inference.</li>
+                <li><strong>Signal Extraction</strong> — Kinematic and topological selections applied to isolate signal from dominant backgrounds (top and Drell-Yan).</li>
+                <li><strong>Statistical Analysis</strong> — Signal significance estimation with evaluation of statistical uncertainties in low signal-to-background regime.</li>
+                <li><strong>Reproducible Workflow</strong> — Development of a documented and modular analysis chain for HSF-India, emphasizing transparency, corrections, and known limitations.</li>
             </ul>
           </div>
           <div class="project-card__section">
@@ -227,8 +228,8 @@
             <ul class="project-card__list">
               <li><strong>Core Stack</strong> — Uproot (I/O), Awkward Array (jagged structures), Vector (4-vector arithmetic), Hist (yield accumulation).</li>
               <li><strong>Distributed Computing</strong> — Dask for scalable parallel processing of millions of NanoAOD events.</li>
-              <li><strong>Statistical Inference</strong> — CMS Combine for simultaneous profile likelihood fits; achieved r = 1.00 ± 0.71, 1.4σ significance.</li>
-              <li><strong>Scale Factors</strong> — Trigger, lepton ID, and isolation corrections applied to simulation weights.</li>
+              <li><strong>Statistical Inference</strong> — CMS Combine for simultaneous profile likelihood fits.</li>
+              <li><strong>Scale Factors</strong> — HLT Trigger, lepton ID, and isolation corrections applied to simulation weights.</li>
             </ul>
           </div>
         </div>
@@ -238,11 +239,11 @@
             <span class="tag">uproot</span>
             <span class="tag">awkward-array</span>
             <span class="tag">Dask</span>
-            <span class="tag">CMS Combine</span>
+            <span class="tag">CMS</span>
             <span class="tag">NanoAOD</span>
             <span class="tag">HSF-India</span>
           </div>
-          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--grey-2); white-space: nowrap;">2024 – Present</span>
+          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--grey-2); white-space: nowrap;">2025 – Present</span>
         </div>
       </div>
 
@@ -252,7 +253,7 @@
           <div>
             <div class="project-card__number">Project 02 &nbsp;·&nbsp; M.Sc. Thesis</div>
             <h2 class="project-card__title">Drell-Yan Process at CMS</h2>
-            <p class="project-card__subtitle">Data Analysis of Z/γ* → ℓℓ at the CMS Experiment</p>
+            <p class="project-card__subtitle">Data Analysis of \( Z \to e^+ e^- \) at the CMS Experiment</p>
           </div>
           <div class="project-card__links">
             <a href="https://github.com/anujraghav252/Drell-Yan-analysis" target="_blank" class="btn btn--dark" style="font-size:0.82rem; padding: 0.5rem 1rem;">
@@ -265,27 +266,26 @@
           <div class="project-card__section">
             <div class="project-card__section-title">Overview</div>
             <p class="project-card__text">
-              Master's thesis centred on the Drell-Yan process at the LHC, working with real
-              experimental and Run 2 Monte Carlo data from the CMS experiment to study Standard
-              Model processes. The analysis focused on the Z → μμ channel, isolating a clean
+              Master's thesis centred on the Drell-Yan process at the LHC, working with Run 2
+              Monte Carlo data from the CMS experiment to study Standard
+              Model processes. The analysis focused on the \( Z \to e^+ e^- \) channel, isolating a clean
               Z boson signal from dominant backgrounds.
             </p>
           </div>
           <div class="project-card__section">
             <div class="project-card__section-title">Analysis Highlights</div>
             <ul class="project-card__list">
-              <li><strong>Signal Extraction</strong> — Isolation of the Z mass peak through precision event selection and background suppression.</li>
-              <li><strong>Event Selection</strong> — Optimised kinematic cuts, lepton isolation criteria, and data quality requirements.</li>
-              <li><strong>Background Rejection</strong> — Suppression of simulated and electroweak backgrounds to obtain a clean signal region.</li>
-              <li><strong>Statistical Analysis</strong> — Signal significance evaluation and distribution properties using CMS Run-2 MC samples.</li>
+                <li><strong>Signal Extraction</strong> — Precision reconstruction of \( Z \to e^+ e^- \) peak (60–120 GeV) using CMS Open Data with MVA-based electron identification (Fall17 V2).</li>
+                <li><strong>Event Selection</strong> — Optimised kinematic cuts and lepton isolation criteria to enhance signal purity and data quality.</li>
+                <li><strong>Background Suppression</strong> — Projected \( E_{\text{T}}^{\text{miss}} \) algorithm exploiting lepton–\( E_{\text{T}}^{\text{miss}} \) angular correlations to suppress \( t\bar{t} \) and diboson backgrounds.</li>
+                <li><strong>Analysis Framework</strong> — C++/ROOT-based pipeline using TChain and TLorentzVector with custom data slimming for efficient multi-file processing.</li>
+                <li><strong>Validation</strong> — Shape-based comparison with six MC backgrounds (\( t\bar{t},\ WW,\ WZ,\ ZZ \)) via normalized data–simulation overlays.</li>
             </ul>
           </div>
           <div class="project-card__section">
             <div class="project-card__section-title">Technical Implementation</div>
             <p class="project-card__text">
               C++-based ROOT scripts for event filtering, selection, and histogram production.
-              Structured workflows from initial data handling to final statistical interpretation,
-              providing a foundation in collider data analysis and Monte Carlo validation.
             </p>
           </div>
         </div>
@@ -295,8 +295,7 @@
             <span class="tag">ROOT</span>
             <span class="tag">CMS Run 2</span>
             <span class="tag">Monte Carlo</span>
-            <span class="tag">QCD</span>
-            <span class="tag">Electroweak</span>
+            <span class="tag">Drell-Yan</span>
           </div>
           <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--grey-2); white-space: nowrap;">2023 – 2024</span>
         </div>
