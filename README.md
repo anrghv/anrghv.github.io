@@ -1,7 +1,9 @@
 <<<<<<< HEAD
-# anujraghav252.github.io
-My Personal website
-=======
+
+# anrghv.github.io
+
+# My Personal website
+
 # anrghv.github.io
 
 My Personal academic website.
@@ -14,8 +16,7 @@ My Personal academic website.
 
 This repository contains the source code for my personal academic website, hosted via GitHub Pages. The site serves as a central resource for my research profile, publications, curriculum vitae, and contact information.
 
-The website is built entirely with plain HTML and CSS.
----
+## The website is built entirely with plain HTML and CSS.
 
 ## Site Structure
 
@@ -34,12 +35,12 @@ anrghv.github.io/
 
 ## Technical Details
 
-| Property | Details |
-|---|---|
-| **Stack** | HTML5, CSS3 |
-| **Hosting** | GitHub Pages |
-| **Dependencies** | None |
-| **Build required** | No |
+| Property           | Details      |
+| ------------------ | ------------ |
+| **Stack**          | HTML5, CSS3  |
+| **Hosting**        | GitHub Pages |
+| **Dependencies**   | None         |
+| **Build required** | No           |
 
 The site uses custom CSS variables for theming and is styled with the [Syne](https://fonts.google.com/specimen/Syne) display font and [DM Sans](https://fonts.google.com/specimen/DM+Sans) for body text, both served via Google Fonts.
 
@@ -70,7 +71,6 @@ The website covers the following:
 - **CV** — Academic and professional curriculum vitae.
 - **Contact** — Institutional affiliations and contact details.
 
-
 ---
 
 ## License
@@ -80,4 +80,5 @@ This repository is licensed under the [MIT License](LICENSE). You are free to us
 ---
 
 © 2026 Anuj Raghav
->>>>>>> 1df8457699fd9cb20ff86fecfeb20ddd02b28015
+
+> > > > > > > 1df8457699fd9cb20ff86fecfeb20ddd02b28015
