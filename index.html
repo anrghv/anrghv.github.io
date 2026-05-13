@@ -1,15 +1,15 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anuj Raghav </title>
   <meta name="description" content="Anuj Raghav — HSF-India Fellow, Experimental High Energy Physics">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ── Hero ───────────────────────────────────────────── */
@@ -22,22 +22,28 @@
       overflow: hidden;
       padding: 0 2rem;
     }
+
     #hero::before {
       content: "";
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.024) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.024) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.024) 1px, transparent 1px);
       background-size: 44px 44px;
     }
+
     #hero::after {
       content: "";
       position: absolute;
-      top: -30%; left: 40%;
-      width: 900px; height: 700px;
-      background: radial-gradient(ellipse, rgba(26,79,170,0.18) 0%, transparent 68%);
+      top: -30%;
+      left: 40%;
+      width: 900px;
+      height: 700px;
+      background: radial-gradient(ellipse, rgba(26, 79, 170, 0.18) 0%, transparent 68%);
       pointer-events: none;
     }
+
     .hero__layout {
       position: relative;
       z-index: 1;
@@ -50,6 +56,7 @@
       gap: 4rem;
       align-items: center;
     }
+
     .hero__eyebrow {
       display: inline-flex;
       align-items: center;
@@ -58,15 +65,18 @@
       font-size: 0.7rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.38);
+      color: rgba(255, 255, 255, 0.38);
       margin-bottom: 1.4rem;
       animation: fadeUp 0.6s ease both;
     }
+
     .hero__eyebrow::before {
       content: "";
-      width: 1.8rem; height: 1px;
-      background: rgba(255,255,255,0.2);
+      width: 1.8rem;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
     }
+
     .hero__name {
       font-family: var(--font-display);
       font-size: clamp(3.2rem, 7vw, 5.8rem);
@@ -77,59 +87,81 @@
       margin-bottom: 0.8rem;
       animation: fadeUp 0.6s 0.08s ease both;
     }
+
     .hero__role {
       font-family: var(--font-display);
       font-size: clamp(1rem, 1.8vw, 1.25rem);
       font-weight: 400;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255, 255, 255, 0.4);
       margin-bottom: 1.8rem;
       line-height: 1.5;
       animation: fadeUp 0.6s 0.16s ease both;
     }
-    .hero__role strong { color: rgba(255,255,255,0.75); font-weight: 600; }
+
+    .hero__role strong {
+      color: rgba(255, 255, 255, 0.75);
+      font-weight: 600;
+    }
+
     .hero__bio {
       font-size: 1rem;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255, 255, 255, 0.55);
       max-width: 520px;
       line-height: 1.8;
       margin-bottom: 2.2rem;
       animation: fadeUp 0.6s 0.22s ease both;
     }
+
     .hero__actions {
-      display: flex; gap: 0.8rem; flex-wrap: wrap;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
       animation: fadeUp 0.6s 0.28s ease both;
     }
+
     /* profile photo */
     .hero__photo-wrap {
       animation: fadeIn 0.8s 0.3s ease both;
       flex-shrink: 0;
     }
+
     .hero__photo {
-      width: 260px; height: 260px;
+      width: 260px;
+      height: 260px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 0 8px rgba(26,79,170,0.12), var(--shadow-lg);
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 0 8px rgba(26, 79, 170, 0.12), var(--shadow-lg);
       filter: grayscale(15%);
       transition: filter var(--trans);
     }
-    .hero__photo:hover { filter: grayscale(0); }
+
+    .hero__photo:hover {
+      filter: grayscale(0);
+    }
+
     /* scroll cue */
     .hero__scroll {
       position: absolute;
-      bottom: 2.2rem; left: 50%;
+      bottom: 2.2rem;
+      left: 50%;
       transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
       font-family: var(--font-mono);
       font-size: 0.62rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.2);
+      color: rgba(255, 255, 255, 0.2);
       animation: fadeIn 1s 0.8s ease both;
     }
+
     .hero__scroll-line {
-      width: 1px; height: 2.2rem;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent);
+      width: 1px;
+      height: 2.2rem;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), transparent);
       animation: scrollPulse 2.2s ease-in-out infinite;
     }
 
@@ -140,14 +172,20 @@
       gap: 5rem;
       align-items: start;
     }
+
     .about__text p {
       font-size: 0.97rem;
       color: var(--grey-3);
       line-height: 1.85;
       margin-bottom: 1rem;
     }
-    .about__text p:last-child { margin-bottom: 0; }
+
+    .about__text p:last-child {
+      margin-bottom: 0;
+    }
+
     .about__sidebar {}
+
     .about__info-block {
       background: var(--white);
       border: 1px solid var(--grey-1);
@@ -156,6 +194,7 @@
       box-shadow: var(--shadow-sm);
       margin-bottom: 1.5rem;
     }
+
     .about__info-item {
       display: flex;
       align-items: flex-start;
@@ -164,12 +203,18 @@
       border-bottom: 1px solid var(--grey-1);
       font-size: 0.85rem;
     }
-    .about__info-item:last-child { border-bottom: none; }
+
+    .about__info-item:last-child {
+      border-bottom: none;
+    }
+
     .about__info-icon {
-      width: 18px; flex-shrink: 0;
+      width: 18px;
+      flex-shrink: 0;
       color: var(--grey-2);
       margin-top: 2px;
     }
+
     .about__info-label {
       font-family: var(--font-mono);
       font-size: 0.65rem;
@@ -178,11 +223,13 @@
       color: var(--grey-2);
       margin-bottom: 0.15rem;
     }
+
     .about__info-value {
       font-size: 0.85rem;
       color: var(--text);
       font-weight: 500;
     }
+
     .about__interests-title {
       font-family: var(--font-display);
       font-size: 0.8rem;
@@ -198,17 +245,23 @@
       background: var(--navy-2);
       padding: 0;
     }
+
     .stats__grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
+
     .stats__item {
       padding: 2.5rem 2rem;
       text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.06);
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
     }
-    .stats__item:last-child { border-right: none; }
+
+    .stats__item:last-child {
+      border-right: none;
+    }
+
     .stats__value {
       font-family: var(--font-display);
       font-size: 2.2rem;
@@ -218,38 +271,76 @@
       margin-bottom: 0.35rem;
       letter-spacing: -0.02em;
     }
-    .stats__value span { color: var(--red); }
+
+    .stats__value span {
+      color: var(--red);
+    }
+
     .stats__label {
       font-family: var(--font-mono);
       font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255, 255, 255, 0.35);
     }
 
     /* ── Animations ─────────────────────────────────────── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
+
     @keyframes scrollPulse {
-      0%, 100% { opacity: 0.25; }
-      50%       { opacity: 0.7; }
+
+      0%,
+      100% {
+        opacity: 0.25;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
     }
 
     /* ── Responsive ─────────────────────────────────────── */
     @media (max-width: 860px) {
-      .hero__layout { grid-template-columns: 1fr; }
-      .hero__photo-wrap { display: none; }
-      .about__grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .stats__grid { grid-template-columns: repeat(2, 1fr); }
+      .hero__layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__photo-wrap {
+        display: none;
+      }
+
+      .about__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ─── Nav ─────────────────────────────────────────── -->
@@ -263,7 +354,12 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <button class="nav__menu-btn" onclick="toggleMenu()" aria-label="Menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
     </button>
   </nav>
   <div class="nav__mobile" id="mobileMenu">
@@ -278,30 +374,36 @@
   <section id="hero">
     <div class="hero__layout">
       <div class="hero__content">
-        <div class="hero__eyebrow">HSF-India Fellow &nbsp;·&nbsp; Delhi University &nbsp;·&nbsp; CMS</div>
+        <!-- <div class="hero__eyebrow">HSF-India Fellow &nbsp;·&nbsp; Delhi University &nbsp;·</div> -->
         <h1 class="hero__name">Anuj<br>Raghav</h1>
         <p class="hero__role">
-          <strong>Experimental High Energy Physics</strong><br>
-           University of Delhi
+          <strong>PhD, Experimental High Energy Physics</strong><br>
+          University of Delhi
         </p>
         <p class="hero__bio">
-          I work on CMS Open Data analysis, building open and reproducible
-          pipelines for Higgs physics. Currently working on Higgs to WW analysis
-          with CMS Run 2 NanoAOD as part of the HSF-India initiative.
+          I am PhD student in Experimental High Energy Physics at University of Delhi.
+          Currently working on Higgs to WW analysis
+          with CMS Run 2 NanoAOD datasets as part of the HSF-India Project.
         </p>
         <div class="hero__actions">
           <a href="research.html" class="btn btn--primary">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
             View Research
           </a>
           <a href="cv.html" class="btn btn--outline">Curriculum Vitae</a>
           <a href="https://github.com/anrghv" target="_blank" class="btn btn--outline">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+            </svg>
             GitHub
           </a>
         </div>
       </div>
-        <!-- <div class="hero__photo-wrap">
+      <!-- <div class="hero__photo-wrap">
             <img src="assets/img/image_anuj.jpeg" alt="Anuj Raghav" class="hero__photo">
         </div> -->
     </div>
@@ -339,20 +441,20 @@
       <div class="about__grid">
         <div class="reveal">
           <span class="label">About</span>
-          <h2 class="heading">Physics.<br>Analysis.<br>Code.</h2>
+          <!-- <h2 class="heading">Physics.<br>Analysis.<br>Code.</h2> -->
           <div class="rule"></div>
           <div class="about__text">
             <p>
-              I hold a Master's degree in Physics from the University of Delhi, where I also completed
-              my undergraduate studies. I am currently working as an HSF-India Fellow, funded by the
-              NSF and Princeton University, developing a complete analysis pipeline for the
-              Higgs to WW in electron-muon final channel using CMS Open Data.
+              I am a PhD student at the University of Delhi working in Experimental High Energy Physics.
+              I completed both my undergraduate and master’s studies in Physics at the same institution.
             </p>
             <p>
-              The goal of this work is to build a structured and reproducible pipeline that can serve
-              as a practical guide for early-career researchers entering High Energy Physics. This
-              summer, I will be presenting this work at the Conference on Computing in High Energy
-              and Nuclear Physics (CHEP) in Thailand.
+              Currently, I am an HSF-India Fellow, supported by the National Science Foundation and Princeton
+              University, where I am developing a complete and reproducible analysis pipeline for the Higgs to
+              WW process in the electron–muon final state using CMS Open Data. The project is aimed at creating
+              a structured pipeline that can serve as a practical resource for early-career researchers entering
+              High Energy Physics. This work will be presented at the Conference on Computing in High Energy and
+              Nuclear Physics in Thailand.
             </p>
             <p>
               Before joining HSF-India, I completed my master's thesis at the University of Delhi,
@@ -361,7 +463,7 @@
             </p>
             <p>
               I am particularly interested in open science, machine learning in HEP, and the
-              future of AI-driven analysis. 
+              future of AI-driven analysis.
               <!-- I am actively seeking PhD opportunities in Experimental
               High Energy Physics. -->
             </p>
@@ -374,43 +476,45 @@
 
         <div class="reveal reveal-delay-1">
           <div class="about__info-block">
+
             <div class="about__info-item">
-              <svg class="about__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg class="about__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
               <div>
                 <div class="about__info-label">Location</div>
                 <div class="about__info-value">India</div>
               </div>
             </div>
+
             <div class="about__info-item">
-              <svg class="about__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <div>
-                <div class="about__info-label">Fellowship</div>
-                <div class="about__info-value">HSF-India Fellow</div>
-              </div>
-            </div>
-            <div class="about__info-item">
-              <svg class="about__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <svg class="about__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              </svg>
               <div>
                 <div class="about__info-label">Education</div>
                 <div class="about__info-value">University of Delhi</div>
               </div>
             </div>
+
             <div class="about__info-item">
-              <svg class="about__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              <div>
-                <div class="about__info-label">Experiment</div>
-                <div class="about__info-value">CMS, LHC</div>
-              </div>
-            </div>
-            <div class="about__info-item">
-              <svg class="about__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <svg class="about__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
               <div>
                 <div class="about__info-label">Status</div>
-                <div class="about__info-value">-</div>
+                <div class="about__info-value">PhD in Exp-HEP</div>
               </div>
             </div>
-          </div>
 
+          </div>
           <div class="about__interests-title">Research Interests</div>
           <div class="tags">
             <span class="tag tag--blue">Higgs Physics</span>
@@ -447,4 +551,5 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
+
 </html>
