@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<div class="wrap">
+  <section class="hero">
+    <span class="page-header__eyebrow">{{ page.eyebrow }}</span>
+    <h1>{{ page.title }}</h1>
+    <p class="hero__role">{{ page.role }}</p>
+    <div class="hero__actions">
+      {% for link in page.actions %}
+        <a href="{{ link.url }}" class="btn{% if link.primary %} btn--primary{% endif %}"
+           {% if link.external %}target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <article>
+    {{ content }}
+  </article>
+
+  {% if page.facts %}
+  <div class="info-grid">
+    {% for fact in page.facts %}
+      <div>
+        <div class="info-grid__label">{{ fact.label }}</div>
+        <div class="info-grid__value">{{ fact.value }}</div>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.interests %}
+  <div>
+    <div class="info-grid__label" style="margin-bottom:0.6rem;">Research Interests</div>
+    <div class="tags">
+      {% for interest in page.interests %}<span class="tag">{{ interest }}</span>{% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>

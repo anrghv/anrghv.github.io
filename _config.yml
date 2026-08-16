@@ -1,0 +1,67 @@
+title: "Anuj Raghav"
+tagline: "Experimental High Energy Physics"
+description: >-
+  Anuj Raghav — PhD researcher in Experimental High Energy Physics at the
+  University of Delhi, working with the CMS Experiment at CERN. HSF-India Fellow.
+author: "Anuj Raghav"
+email: anujraghav.physics@gmail.com
+url: "https://anrghv.github.io"
+baseurl: ""
+
+# ── Build ──────────────────────────────────────────────
+markdown: kramdown
+permalink: pretty
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+sass:
+  style: compressed
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# ── Navigation ─────────────────────────────────────────
+# Edit this list to add/remove/reorder nav items — nothing else to touch.
+nav:
+  - title: "About"
+    url: /
+  - title: "Research"
+    url: /research/
+  - title: "Publications & Talks"
+    url: /publications/
+  - title: "CV"
+    url: /cv/
+  - title: "Contact"
+    url: /contact/
+
+# ── Collections ────────────────────────────────────────
+# Add a talk: drop a new file in _talks/, front matter only, no layout needed.
+# Add a publication: same idea in _publications/.
+collections:
+  talks:
+    output: false
+  publications:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "talks"
+    values:
+      layout: null
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: null
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
