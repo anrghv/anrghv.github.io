@@ -2,7 +2,7 @@
 layout: page
 title: "Get in Touch"
 eyebrow: Contact
-lead: "Open to research collaborations, and conversations about open science and HEP computing."
+lead: "Open to collaborations, and conversations about open science and HEP."
 description: "Contact — Anuj Raghav"
 ---
 
