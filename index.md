@@ -27,6 +27,7 @@ interests:
   - HEP Computing
   - Open Science
 ---
+<img src="/images/image.jpeg" alt="Anuj Raghav" style="width:180px;height:180px;object-fit:cover;border-radius:50%;display:block;margin-bottom:1.5rem;">
 
 I am a PhD student in Experimental High Energy Physics at the University of Delhi, working with the CMS Experiment at CERN. I currently work on Higgs analyses using Boosted Decision Trees (BDTs). I completed both my undergraduate and master's studies in Physics at the same institution.
 
@@ -34,4 +35,4 @@ Before my PhD, I was an HSF-India Fellow, supported by the National Science Foun
 
 Earlier, for my master's thesis at the University of Delhi, I analysed the Drell-Yan process at CMS, studying Z to electron-positron production as a precision QCD benchmark.
 
-Lately I've been going down three rabbit holes: machine learning in HEP (Decision Trees), quantum field theory (It keeps me humble ), and open science.
+Lately I've been going down three rabbit holes: machine learning in HEP (mostly decision trees), quantum field theory (it keeps me humble), and open science.
