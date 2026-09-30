@@ -2,12 +2,33 @@
 layout: page
 title: Research
 eyebrow: Research
-lead: I am currently working on Higgs boson measurements at the LHC, using CMS Open Data and modern Python-based analysis frameworks.
-description: "Research projects by Anuj Raghav — H→WW NanoAOD analysis, Drell-Yan at CMS, ML in HEP."
+lead: I am currently working on Higgs boson analyses with the CMS Experiment, using machine learning (BDTs) for signal–background separation. Earlier work includes an open-data H→WW pipeline and a Drell-Yan thesis.
+description: "Research projects by Anuj Raghav — Higgs to gluon-gluon with BDTs, H→WW NanoAOD analysis, Drell-Yan at CMS, ML in HEP."
 ---
 
 <div class="project" markdown="1">
-  <div class="project__eyebrow">Project 01 · HSF-India Project</div>
+  <div class="project__eyebrow">Project 01 · PhD Research</div>
+  <h2 class="project__title">Higgs to Gluon-Gluon Analysis</h2>
+  <p class="project__subtitle">Higgs analysis with CMS Experiment and BDT-based event classification</p>
+
+  **Overview**
+
+  Ongoing PhD analysis of Higgs boson decays to gluons (H → gg), reconstructed as a dijet system, in association with a Z boson. The work uses CMS data and focuses on maximising signal–background separation with Boosted Decision Trees.
+
+  **Analysis Highlights**
+
+  - **BDT Training** — Signal–background classification with XGBoost and TMVA.
+  - **Jet Selection** — Quark–gluon likelihood (QGL) discriminants to identify gluon-like jets as Higgs candidates.
+  - **Analysis Framework** — RDataFrame-based workflow for fast, scalable event processing.
+
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">C++</span><span class="tag">XGBoost</span>
+    <span class="tag">TMVA</span><span class="tag">RDataFrame</span><span class="tag">CMS</span>
+  </div>
+</div>
+
+<div class="project" markdown="1">
+  <div class="project__eyebrow">Project 02 · HSF-India Project (Completed)</div>
   <h2 class="project__title">Higgs to WW Analysis</h2>
   <p class="project__subtitle">Using CMS 2016 Ultra-Legacy NanoAOD Open Data</p>
 
@@ -18,7 +39,7 @@ description: "Research projects by Anuj Raghav — H→WW NanoAOD analysis, Drel
 
   **Overview**
 
-  Developing a complete analysis pipeline for the Higgs boson decaying into two W bosons in the opposite-sign, different-flavour (electron-muon) final state via the ggH production channel. The project uses CMS 2016 Ultra-Legacy Open Data to probe Standard Model physics while demonstrating the scope of CERN Open Data for education and research.
+  Developed a complete analysis pipeline for the Higgs boson decaying into two W bosons in the opposite-sign, different-flavour (electron-muon) final state via the ggH production channel. The project uses CMS 2016 Ultra-Legacy Open Data to probe Standard Model physics while demonstrating the scope of CERN Open Data for education and research.
 
   **Analysis Highlights**
 
@@ -42,7 +63,7 @@ description: "Research projects by Anuj Raghav — H→WW NanoAOD analysis, Drel
 </div>
 
 <div class="project" markdown="1">
-  <div class="project__eyebrow">Project 02 · M.Sc. Thesis</div>
+  <div class="project__eyebrow">Project 03 · M.Sc. Thesis</div>
   <h2 class="project__title">Drell-Yan Process at CMS</h2>
   <p class="project__subtitle">Data Analysis of Z → e⁺e⁻ at the CMS Experiment</p>
 
