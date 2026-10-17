@@ -1,13 +1,43 @@
-<nav class="site-nav">
-  <div class="site-nav__inner">
-    <a href="{{ '/' | relative_url }}" class="site-nav__brand">{{ site.author }}</a>
-    <ul class="site-nav__links">
-      {% for item in site.nav %}
+<header class="site-header" data-header>
+  <div class="site-header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand__mark" aria-hidden="true">AR</span>
+      <span class="brand__text">
+        <span class="brand__name">{{ site.author }}</span>
+        <span class="brand__meta">{{ site.identity.experiment }}</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" id="primary-nav" data-nav aria-label="Primary">
+      <ul class="site-nav__list">
+        {%- for item in site.nav %}
+        {%- assign active = false %}
+        {%- if page.url == item.url %}{% assign active = true %}{% endif %}
+        {%- if item.url != "/" and page.url contains item.url %}{% assign active = true %}{% endif %}
         <li>
-          <a href="{{ item.url | relative_url }}"
-             {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
+          <a href="{{ item.url | relative_url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a>
         </li>
-      {% endfor %}
-    </ul>
+        {%- endfor %}
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="icon-btn" href="mailto:{{ site.email }}" aria-label="Email {{ site.author }}">
+        {% include icon.html name="mail" %}
+      </a>
+      <a class="icon-btn" href="https://github.com/anrghv" target="_blank" rel="noopener" aria-label="GitHub profile">
+        {% include icon.html name="github" %}
+      </a>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme">
+        <span class="theme-toggle__icon theme-toggle__icon--sun">{% include icon.html name="sun" %}</span>
+        <span class="theme-toggle__icon theme-toggle__icon--moon">{% include icon.html name="moon" %}</span>
+      </button>
+    </div>
+
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__icon nav-toggle__icon--open">{% include icon.html name="menu" %}</span>
+      <span class="nav-toggle__icon nav-toggle__icon--close">{% include icon.html name="close" %}</span>
+      <span class="sr-only">Menu</span>
+    </button>
   </div>
-</nav>
+</header>

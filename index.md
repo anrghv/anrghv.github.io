@@ -3,23 +3,35 @@ layout: home
 title: Anuj Raghav
 eyebrow: About
 role: PhD, Experimental High Energy Physics · University of Delhi
-description: "Anuj Raghav, Experimental High Energy Physics"
+description: "Anuj Raghav — PhD researcher in Experimental High Energy Physics at the University of Delhi, working with the CMS Experiment at CERN."
+portrait:
+  image: /Images/image.jpeg
+  alt: "Anuj Raghav"
+  caption: "CMS Experiment · CERN"
+chips:
+  - icon: pin
+    text: Delhi, India
+  - icon: sparkle
+    text: HSF-India Fellow
 actions:
-  - label: View Research
+  - label: View research
     url: /research/
     primary: true
-  - label: Contact me
-    url: /contact/
-  - label: GitHub
-    url: https://github.com/anrghv
-    external: true
-# facts:
-#   - label: Location
-#     value: India
-#   - label: Education
-#     value: University of Delhi
-#   - label: Status
-#     value: PhD in Experimental HEP
+  - label: Publications
+    url: /publications/
+  - label: Email me
+    url: mailto:anuj.ehep@gmail.com
+facts:
+  - label: Position
+    value: PhD student, Experimental HEP
+  - label: Institution
+    value: University of Delhi
+  - label: Experiment
+    value: CMS, CERN
+currently:
+  - "Training boosted decision trees for the ongoing H → gg analysis with CMS data."
+  - "Building a reproducible H → WW pipeline on CMS 2016 Open Data for HSF-India."
+  - "Reading up on machine learning, quantum field theory, and open science."
 interests:
   - Higgs Physics
   - ML in HEP
@@ -27,7 +39,6 @@ interests:
   - HEP Computing
   - Open Science
 ---
-<!-- <img src="/Images/image.jpeg" alt="Anuj Raghav" style="width:180px;height:180px;object-fit:cover;border-radius:50%;display:block;margin-bottom:1.5rem;"> -->
 
 I am a PhD student in Experimental High Energy Physics at the University of Delhi, working with the CMS Experiment at CERN. I currently work on Higgs analyses using Boosted Decision Trees (BDTs). I completed both my undergraduate and master's studies in Physics at the same institution.
 

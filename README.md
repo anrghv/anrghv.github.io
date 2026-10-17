@@ -1,75 +1,95 @@
 # anrghv.github.io
 
-My personal academic website — rebuilt on Jekyll, hosted via GitHub Pages.
+Personal site of **Anuj Raghav** — PhD researcher in Experimental High Energy Physics,
+University of Delhi · CMS Experiment, CERN.
 
-🌐 **Live site:** [anrghv.github.io](https://anrghv.github.io)
+Static site built with Jekyll and published by GitHub Pages straight from `main`:
+push a commit and the site rebuilds itself, no CI to maintain.
 
-## How this works
+## What it is made of
 
-Content and design are fully separated:
+| Piece | Detail |
+| --- | --- |
+| Generator | Jekyll (kramdown + GFM, `jekyll-feed`, `jekyll-sitemap`) |
+| Styles | `assets/css/main.css` — one file, plain CSS, no preprocessor and no build step |
+| Script | `assets/js/main.js` — theme toggle, mobile nav, entrance stagger, print button |
+| Icons | `_includes/icon.html` — inline SVG, sized with `1em` so it follows font size |
+| Content | Markdown pages + front-matter-only collections (`_research`, `_talks`, `_publications`) |
 
-- **Content** lives in Markdown files (`index.md`, `research.md`, `cv.md`,
-  `contact.md`, `publications.md`) and in two collections, `_talks/` and
-  `_publications/`. Editing what the site *says* never touches HTML or CSS.
-- **Design** lives in exactly one file: `assets/css/main.scss`. Editing what
-  the site *looks like* never touches content.
+No frameworks, no tracking, no third-party scripts. The only external requests are
+the three Google fonts.
 
-GitHub Pages builds the site with Jekyll automatically on every push to
-`main` — no build step to run yourself, no CI config needed.
+## Structure
 
-## Adding content
-
-**A new talk:** add a file to `_talks/`, e.g. `_talks/2027-my-talk.md`:
-
-```yaml
----
-title: "Talk title"
-authors: "Anuj Raghav"
-venue: "Conference name, location"
-year: 2027
-type: "Contributed Talk"
-tags: [tag1, tag2]
----
+```
+_config.yml            site title, description, nav, identity, collections
+index.md               About page — hero content lives in its front matter
+research.md            renders every project in _research/
+publications.md        renders _talks/ and _publications/
+cv.md                  CV (has print styles)
+contact.md             contact cards, driven by _data/social.yml
+404.md                 not-found page
+_data/social.yml       contact links shown on /contact/ and in the footer
+_research/*.md         one file per research project (front matter only)
+_talks/*.md            one file per talk (front matter only)
+_publications/*.md     one file per publication or thesis (front matter only)
+_includes/             nav.html, footer.html, icon.html
+_layouts/              default.html, home.html, page.html
+assets/css/main.css    the whole design
+assets/js/main.js      progressive enhancements
+assets/img/            favicon.svg, og.png (social preview card)
+tools/                 review helpers — never published (excluded in _config.yml)
 ```
 
-**A new publication:** same idea in `_publications/`.
+## Editing content
 
-**A new nav item / page:** add a `.md` file with `layout: page` in the front
-matter, and add it to the `nav:` list in `_config.yml`.
+- **Nav** — reorder or add items in `_config.yml` under `nav:`. Nothing else to touch.
+- **Hero (About page)** — `index.md` front matter: `portrait`, `chips`, `actions`,
+  `facts`, `currently`, `interests`. The prose below it is plain Markdown.
+- **A research project** — copy any file in `_research/`. Fields: `order`, `eyebrow`,
+  `title`, `subtitle`, `status`, `links`, `overview`, `highlights`, `implementation`, `tags`.
+  `research.md` renders them; the "What I'm curious about" cards come from its own
+  `curious:` front matter.
+- **A talk / thesis / publication** — add a file to `_talks/` or `_publications/` with
+  `year`, `title`, `authors`, `venue`, `type`, `tags` (and `date_label`, `upcoming` for talks).
+- **Contact links** — `_data/social.yml`; the `icon:` value must match a name in
+  `_includes/icon.html`. These feed both the contact page and the footer.
+- **Structured data / social previews** — `_config.yml` under `identity:` and `og_image:`.
 
-Nothing else needs editing — the publications page, nav, and styling all
-read from these files automatically.
+## Design
+
+- Every colour, font, radius, shadow and width is a custom property at the top of
+  `assets/css/main.css`, in `:root` (light) and `[data-theme="dark"]` (dark).
+  Change the palette there and the whole site follows, in both themes.
+- Typography: **Fraunces** for display, **Inter** for body and UI, **IBM Plex Mono**
+  for labels and metadata.
+- Theme: follows the operating system on a first visit, then remembers the reader's
+  choice in `localStorage`. The theme is applied before first paint, so there is no flash.
+- Accessibility: skip link, visible focus rings, `aria-current` on the active nav item,
+  labelled icon buttons, and `prefers-reduced-motion` disables all motion.
+- Print: the CV page prints cleanly (chrome and motion removed, accents flattened).
 
 ## Local preview
 
+GitHub Pages builds the site for you, but for local work:
+
 ```bash
-bundle install
-bundle exec jekyll serve
+gem install jekyll jekyll-feed jekyll-sitemap webrick
+# run from the *parent* folder so Bundler does not pick up the Gemfile
+jekyll serve --source anrghv.github.io --destination anrghv.github.io/_site
 ```
 
-Then open `http://localhost:4000`. Jekyll rebuilds automatically as you
-edit Markdown files.
-
-## Site structure
+`tools/preview.html` is a review harness that renders the running site inside
+fixed-width frames, which is handy for checking breakpoints without resizing
+the window:
 
 ```
-anrghv.github.io/
-├── _config.yml          # site title, nav items, collection config
-├── _layouts/             # page shells (default, home, page)
-├── _includes/            # nav.html, footer.html
-├── _talks/                # one file per talk — content only
-├── _publications/         # one file per publication — content only
-├── _data/social.yml       # contact links (email, GitHub, LinkedIn, ORCID)
-├── assets/css/main.scss   # the ONE file that controls all styling
-├── index.md               # About / home page
-├── research.md
-├── cv.md
-├── contact.md
-├── publications.md         # auto-lists _talks/ + _publications/
-└── LICENSE
+http://127.0.0.1:8000/tools/preview.html?path=/research/&w=1280,900,420
 ```
 
-## License
+`tools/og-card.html` is the source of `assets/img/og.png` (1200×630): open it at
+exactly 1200px wide and re-capture the image if the identity block changes.
 
-MIT — see [LICENSE](LICENSE). Please don't reproduce the personal content
-(biography, CV, research descriptions) without permission.
+## Licence
+
+Content © Anuj Raghav. Site code released under the MIT licence (`LICENSE`).

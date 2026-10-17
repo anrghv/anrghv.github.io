@@ -2,100 +2,91 @@
 layout: page
 title: Research
 eyebrow: Research
-lead: I am currently working on Higgs boson analyses with the CMS Experiment, using machine learning (BDTs) for signal–background separation. Earlier work includes an open-data H→WW pipeline and a Drell-Yan thesis.
+lead: "I am currently working on Higgs boson analyses with the CMS Experiment, using machine learning (BDTs) for signal–background separation. Earlier work includes an open-data H→WW pipeline and a Drell-Yan thesis."
 description: "Research projects by Anuj Raghav — Higgs to gluon-gluon with BDTs, H→WW NanoAOD analysis, Drell-Yan at CMS, ML in HEP."
+curious:
+  - title: "AI &amp; ML in HEP"
+    text: "How machine learning is reshaping signal extraction, anomaly detection, and the future of BSM searches at the LHC."
+  - title: "Open science"
+    text: "Democratising collider physics through open data, reproducible pipelines, and tools accessible to researchers without full collaboration access."
+  - title: "Beyond the Standard Model"
+    text: "New physics searches — extended Higgs sectors, dark matter mediators, and precision measurements probing BSM effects."
+  - title: "HEP computing"
+    text: "Next-generation columnar analysis tools, distributed computing with Dask, and the HL-LHC data challenge."
 ---
 
-<div class="project" markdown="1">
-  <div class="project__eyebrow">Project 01 · PhD Research</div>
-  <h2 class="project__title">Higgs to Gluon-Gluon Analysis</h2>
-  <p class="project__subtitle">Higgs analysis with CMS Experiment and BDT-based event classification</p>
+{%- assign projects = site.research | sort: "order" -%}
 
-  **Overview**
+<div class="project-list">
+  {%- for project in projects %}
+  <article class="project" data-reveal>
+    <header class="project__head">
+      <span class="project__eyebrow">{{ project.eyebrow }}</span>
+      <h2 class="project__title">{{ project.title }}</h2>
+      <p class="project__subtitle">{{ project.subtitle }}</p>
+      {%- if project.status %}
+      <span class="badge{% if project.status == 'Ongoing' %} badge--live{% endif %}">{{ project.status }}</span>
+      {%- endif %}
+      {%- if project.links %}
+      <ul class="project__links">
+        {%- for link in project.links %}
+        <li>
+          <a class="btn btn--sm" href="{{ link.url }}" target="_blank" rel="noopener">
+            <span>{{ link.label }}</span>{% include icon.html name="arrow-up-right" %}
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </header>
 
-  Ongoing PhD analysis of Higgs boson decays to gluons (H → gg), reconstructed as a dijet system, in association with a Z boson. The work uses CMS data and focuses on maximising signal–background separation with Boosted Decision Trees.
+    <div class="project__body">
+      <p class="project__overview">{{ project.overview }}</p>
 
-  **Analysis Highlights**
+      {%- if project.highlights %}
+      <h3 class="project__label">Analysis highlights</h3>
+      <ul class="bullets">
+        {%- for item in project.highlights %}
+        <li>
+          <span class="bullets__label">{{ item.label }}</span>
+          <span class="bullets__text">{{ item.text }}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
 
-  - **BDT Training** — Signal–background classification with XGBoost and TMVA.
-  - **Jet Selection** — Quark–gluon likelihood (QGL) discriminants to identify gluon-like jets as Higgs candidates.
-  - **Analysis Framework** — RDataFrame-based workflow for fast, scalable event processing.
+      {%- if project.implementation %}
+      <h3 class="project__label">Technical implementation</h3>
+      <ul class="bullets bullets--plain">
+        {%- for item in project.implementation %}
+        <li>
+          {%- if item.label %}<span class="bullets__label">{{ item.label }}</span>{% endif %}
+          <span class="bullets__text">{{ item.text }}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
 
-  <div class="tags">
-    <span class="tag">Python</span><span class="tag">C++</span><span class="tag">XGBoost</span>
-    <span class="tag">TMVA</span><span class="tag">RDataFrame</span><span class="tag">CMS</span>
-  </div>
+      {%- if project.tags %}
+      <ul class="tags">
+        {%- for tag in project.tags %}<li class="tag">{{ tag }}</li>{% endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+  </article>
+  {%- endfor %}
 </div>
 
-<div class="project" markdown="1">
-  <div class="project__eyebrow">Project 02 · HSF-India Project (Completed)</div>
-  <h2 class="project__title">Higgs to WW Analysis</h2>
-  <p class="project__subtitle">Using CMS 2016 Ultra-Legacy NanoAOD Open Data</p>
-
-  <div class="project__links">
-    <a href="https://github.com/anrghv/H-to-WW-NanoAOD-analysis" class="btn" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://h-to-ww-nanoaod-analysis.readthedocs.io/" class="btn" target="_blank" rel="noopener">Docs</a>
+<section class="section">
+  <div class="section__head">
+    <h2 class="section__title">What I'm curious about</h2>
   </div>
-
-  **Overview**
-
-  Developed a complete analysis pipeline for the Higgs boson decaying into two W bosons in the opposite-sign, different-flavour (electron-muon) final state via the ggH production channel. The project uses CMS 2016 Ultra-Legacy Open Data to probe Standard Model physics while demonstrating the scope of CERN Open Data for education and research.
-
-  **Analysis Highlights**
-
-  - **Analysis Pipeline** — End-to-end reconstruction of H → WW → e±μ∓ (ggH) using CMS Open Data, from trigger selection to final-state object definition.
-  - **Object Reconstruction** — Lepton identification, isolation criteria, and missing transverse energy (MET) reconstruction for neutrino inference.
-  - **Signal Extraction** — Kinematic and topological selections applied to isolate signal from dominant backgrounds (top and Drell-Yan).
-  - **Statistical Analysis** — Signal significance estimation with evaluation of statistical uncertainties in the low signal-to-background regime.
-  - **Reproducible Workflow** — Documented and modular analysis chain for HSF-India, emphasizing transparency, corrections, and known limitations.
-
-  **Technical Pipeline**
-
-  - **Core Stack** — Uproot (I/O), Awkward Array (jagged structures), Vector (4-vector arithmetic), Hist (yield accumulation).
-  - **Distributed Computing** — Dask for scalable parallel processing of millions of NanoAOD events.
-  - **Statistical Inference** — CMS Combine for simultaneous profile likelihood fits.
-  - **Scale Factors** — HLT trigger, lepton ID, and isolation corrections applied to simulation weights.
-
-  <div class="tags">
-    <span class="tag">Python</span><span class="tag">uproot</span><span class="tag">awkward-array</span>
-    <span class="tag">Dask</span><span class="tag">CMS</span><span class="tag">NanoAOD</span><span class="tag">HSF-India</span>
+  <div class="grid grid--2">
+    {%- for item in page.curious %}
+    <article class="card" data-reveal>
+      <h3 class="card__title">{{ item.title }}</h3>
+      <p class="card__text">{{ item.text }}</p>
+    </article>
+    {%- endfor %}
   </div>
-</div>
-
-<div class="project" markdown="1">
-  <div class="project__eyebrow">Project 03 · M.Sc. Thesis</div>
-  <h2 class="project__title">Drell-Yan Process at CMS</h2>
-  <p class="project__subtitle">Data Analysis of Z → e⁺e⁻ at the CMS Experiment</p>
-
-  <div class="project__links">
-    <a href="https://github.com/anrghv/Drell-Yan-analysis" class="btn" target="_blank" rel="noopener">GitHub</a>
-  </div>
-
-  **Overview**
-
-  Master's thesis centred on the Drell-Yan process at the LHC, working with Run 2 Monte Carlo data from the CMS experiment to study Standard Model processes. The analysis focused on the Z → e⁺e⁻ channel, isolating a clean Z boson signal from dominant backgrounds.
-
-  **Analysis Highlights**
-
-  - **Signal Extraction** — Precision reconstruction of the Z → e⁺e⁻ peak (60–120 GeV) using CMS Open Data with MVA-based electron identification (Fall17 V2).
-  - **Event Selection** — Optimised kinematic cuts and lepton isolation criteria to enhance signal purity and data quality.
-  - **Background Suppression** — Projected MET algorithm exploiting lepton–MET angular correlations to suppress tt̄ and diboson backgrounds.
-  - **Analysis Framework** — C++/ROOT-based pipeline using TChain and TLorentzVector with custom data slimming for efficient multi-file processing.
-  - **Validation** — Shape-based comparison with six MC backgrounds (tt̄, WW, WZ, ZZ) via normalized data–simulation overlays.
-
-  **Technical Implementation**
-
-  C++-based ROOT scripts for event filtering, selection, and histogram production.
-
-  <div class="tags">
-    <span class="tag">C++</span><span class="tag">ROOT</span><span class="tag">CMS Run 2</span>
-    <span class="tag">Monte Carlo</span><span class="tag">Drell-Yan</span>
-  </div>
-</div>
-
-<h2>What I'm Curious About</h2>
-
-- **AI & ML in HEP** — How machine learning is reshaping signal extraction, anomaly detection, and the future of BSM searches at the LHC.
-- **Open Science** — Democratising collider physics through open data, reproducible pipelines, and tools accessible to researchers without full collaboration access.
-- **Beyond Standard Model** — New physics searches — extended Higgs sectors, dark matter mediators, and precision measurements probing BSM effects.
-- **HEP Computing** — Next-generation columnar analysis tools, distributed computing with Dask, and the HL-LHC data challenge.
+</section>

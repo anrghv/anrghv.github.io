@@ -4,9 +4,32 @@ description: >-
   Anuj Raghav — PhD researcher in Experimental High Energy Physics at the
   University of Delhi, working with the CMS Experiment at CERN. HSF-India Fellow.
 author: "Anuj Raghav"
-email: anujraghav.physics@gmail.com
+email: anuj.ehep@gmail.com
 url: "https://anrghv.github.io"
 baseurl: ""
+
+# ── Identity ───────────────────────────────────────────
+# Drives the structured data (schema.org Person) and the social preview card.
+identity:
+  job_title: "PhD Researcher, Experimental High Energy Physics"
+  location: "Delhi, India"
+  affiliation: "University of Delhi"
+  experiment: "CMS Experiment, CERN"
+  orcid: "0009-0004-6667-0434"
+  image: "/Images/image.jpeg"
+  same_as:
+    - "https://github.com/anrghv"
+    - "https://www.linkedin.com/in/anuj-raghav252"
+    - "https://orcid.org/0009-0004-6667-0434"
+  knows_about:
+    - "Higgs physics"
+    - "Machine learning in high energy physics"
+    - "Beyond Standard Model searches"
+    - "HEP computing"
+    - "Open science"
+
+# Social preview image, 1200×630. Rebuild with tools/make-og-image.md
+og_image: "/assets/img/og.png"
 
 # ── Build ──────────────────────────────────────────────
 markdown: kramdown
@@ -14,6 +37,7 @@ permalink: pretty
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
 sass:
   style: compressed
 plugins:
@@ -27,7 +51,7 @@ nav:
     url: /
   - title: "Research"
     url: /research/
-  - title: "Publications & Talks"
+  - title: "Publications"
     url: /publications/
   - title: "CV"
     url: /cv/
@@ -38,12 +62,19 @@ nav:
 # Add a talk: drop a new file in _talks/, front matter only, no layout needed.
 # Add a publication: same idea in _publications/.
 collections:
+  research:
+    output: false
   talks:
     output: false
   publications:
     output: false
 
 defaults:
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      layout: null
   - scope:
       path: ""
       type: "talks"
@@ -63,5 +94,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - LICENSE
   - node_modules
   - vendor
+  - tools
