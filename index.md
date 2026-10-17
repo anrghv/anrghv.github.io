@@ -8,13 +8,6 @@ actions:
   - label: View research
     url: /research/
     primary: true
-facts:
-  - label: Position
-    value: PhD student, Experimental HEP
-  - label: Institution
-    value: University of Delhi
-  - label: Experiment
-    value: CMS, CERN
 currently:
   - "Training boosted decision trees for the ongoing H → gg analysis with CMS data."
   - "Building a reproducible H → WW pipeline on CMS 2016 Open Data for HSF-India."

@@ -44,9 +44,9 @@ tools/                 review helpers — never published (excluded in _config.y
 ## Editing content
 
 - **Nav** — reorder or add items in `_config.yml` under `nav:`. Nothing else to touch.
-- **Hero (About page)** — `index.md` front matter: `actions`, `facts` (rendered as the
-  "At a glance" card beside the intro), `currently`, `interests` (plus an optional
-  `portrait`, which takes the card's place). The prose below it is plain Markdown.
+- **Hero (About page)** — `index.md` front matter: `actions`, `currently`, `interests`
+  (plus an optional `portrait`, which sits beside the text). The prose below it is plain
+  Markdown.
 - **A research project** — copy any file in `_research/`. Fields: `order`, `eyebrow`,
   `title`, `subtitle`, `status`, `links`, `overview`, `highlights`, `implementation`, `tags`.
   `research.md` renders them; the "What I'm curious about" cards come from its own
