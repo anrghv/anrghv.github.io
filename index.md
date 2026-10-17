@@ -8,8 +8,6 @@ actions:
   - label: View research
     url: /research/
     primary: true
-  - label: Publications
-    url: /publications/
 facts:
   - label: Position
     value: PhD student, Experimental HEP

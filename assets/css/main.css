@@ -894,37 +894,6 @@ main {
   font-size: 0.8rem;
 }
 
-.cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  align-items: center;
-  justify-content: space-between;
-  margin: 3rem 0 1rem;
-  padding: clamp(1.4rem, 3vw, 2.1rem);
-  border: 1px solid var(--accent-line);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(140deg, var(--accent-soft), var(--surface) 70%);
-}
-
-.cta__title {
-  margin: 0 0 0.3rem;
-  font-size: 1.3rem;
-}
-
-.cta__text {
-  max-width: 46ch;
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.94rem;
-}
-
-.cta__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
 /* ==========================================================================
    11. Tags and badges
    ========================================================================== */
@@ -1570,19 +1539,6 @@ html.js [data-reveal] {
   .bullets li {
     grid-template-columns: minmax(0, 1fr);
   }
-
-  .cta {
-    align-items: stretch;
-  }
-
-  .cta__actions {
-    width: 100%;
-  }
-
-  .cta__actions .btn {
-    flex: 1 1 auto;
-    justify-content: center;
-  }
 }
 
 @media (max-width: 520px) {
@@ -1614,7 +1570,6 @@ html.js [data-reveal] {
   .site-footer,
   .skip-link,
   .cv-toolbar,
-  .cta,
   .hero__glow,
   .hero__portrait::after {
     display: none !important;
