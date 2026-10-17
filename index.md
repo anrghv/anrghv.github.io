@@ -2,7 +2,8 @@
 layout: home
 title: Anuj Raghav
 eyebrow: About
-role: PhD Student, Experimental High Energy Physics. University of Delhi
+role: PhD Student,
+  Experimental High Energy Physics, University of Delhi
 description: "Anuj Raghav — PhD student in Experimental High Energy Physics at the University of Delhi."
 actions:
   - label: View research
