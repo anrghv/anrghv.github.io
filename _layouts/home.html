@@ -4,7 +4,7 @@ layout: default
 {%- assign latest_talk = site.talks | sort: "date" | reverse | first -%}
 {%- assign latest_pub = site.publications | sort: "year" | reverse | first -%}
 
-<section class="hero{% unless page.portrait %} hero--text{% endunless %}">
+<section class="hero{% unless page.portrait or page.facts %} hero--text{% endunless %}">
   <div class="hero__glow" aria-hidden="true"></div>
   <div class="hero__inner">
     <div class="hero__text">
@@ -44,6 +44,16 @@ layout: default
       <figcaption class="hero__caption">{{ page.portrait.caption }}</figcaption>
       {% endif %}
     </figure>
+    {% elsif page.facts %}
+    <aside class="hero__aside" data-reveal>
+      <p class="hero__aside-label">At a glance</p>
+      {% for fact in page.facts %}
+      <div class="fact">
+        <span class="fact__label">{{ fact.label }}</span>
+        <span class="fact__value">{{ fact.value }}</span>
+      </div>
+      {% endfor %}
+    </aside>
     {% endif %}
   </div>
 </section>
@@ -52,17 +62,6 @@ layout: default
   <article class="prose" data-reveal>
     {{ content }}
   </article>
-
-  {% if page.facts %}
-  <section class="facts" data-reveal>
-    {% for fact in page.facts %}
-    <div class="fact">
-      <span class="fact__label">{{ fact.label }}</span>
-      <span class="fact__value">{{ fact.value }}</span>
-    </div>
-    {% endfor %}
-  </section>
-  {% endif %}
 
   {% if page.currently %}
   <section class="section" data-reveal>
@@ -93,7 +92,7 @@ layout: default
     <div class="section__head">
       <h2 class="section__title">Selected work</h2>
       <a class="section__link" href="{{ '/publications/' | relative_url }}">
-        <span>All publications &amp; talks</span>{% include icon.html name="arrow-right" %}
+        <span>All talks &amp; publications</span>{% include icon.html name="arrow-right" %}
       </a>
     </div>
     <ul class="mini-list">

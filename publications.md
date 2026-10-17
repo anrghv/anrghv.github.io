@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Publications & Talks"
-eyebrow: Publications
+title: "Talks & Publications"
+eyebrow: "Talks & Publications"
 lead: "Talks, theses, and academic contributions."
 description: "Talks and publications by Anuj Raghav."
 permalink: /publications/

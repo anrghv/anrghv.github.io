@@ -534,7 +534,7 @@ main {
   content: "";
   position: absolute;
   top: -30%;
-  right: -5%;
+  right: 0;
   left: 20%;
   height: 130%;
   z-index: 0;
@@ -548,7 +548,7 @@ main {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
   max-width: var(--shell);
@@ -564,12 +564,13 @@ main {
 }
 
 .hero__role {
-  max-width: 42ch;
+  max-width: 44rem;
   margin: 0 0 1.3rem;
   color: var(--ink-soft);
   font-family: var(--font-display);
   font-size: clamp(1rem, 0.95rem + 0.4vw, 1.16rem);
   font-style: italic;
+  text-wrap: balance;
 }
 
 .hero--text .hero__inner {
@@ -578,6 +579,25 @@ main {
 
 .hero--text .hero__text {
   max-width: 48rem;
+}
+
+.hero__aside {
+  display: grid;
+  gap: 1.05rem;
+  padding: 1.45rem 1.55rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__aside-label {
+  margin: 0;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
 }
 
 .hero__actions {
@@ -777,17 +797,6 @@ main {
    ========================================================================== */
 .layout-home main > .wrap {
   padding-top: 2.6rem;
-}
-
-.facts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 1rem;
-  margin: 2.4rem 0;
-  padding: 1.35rem 1.4rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface-2);
 }
 
 .fact {
@@ -1484,6 +1493,12 @@ html.js [data-reveal] {
     max-width: 24rem;
     margin: 0 auto;
     width: 100%;
+  }
+
+  .hero__aside {
+    max-width: 26rem;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
