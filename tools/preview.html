@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Preview harness — anrghv.github.io</title>
+  <style>
+    html, body { margin: 0; background: #1b1f26; font-family: system-ui, sans-serif; }
+    .bar { padding: 10px 14px; color: #e7ebf2; font-size: 13px; letter-spacing: 0.02em; }
+    .frames { display: flex; gap: 18px; align-items: flex-start; padding: 0 14px 14px; }
+    .frame { flex: none; overflow: hidden; border-radius: 10px; background: #fff; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45); }
+    .frame > h2 { margin: 0; padding: 7px 11px; background: #2b3038; color: #cdd3dd; font: 600 12px/1.4 system-ui, sans-serif; }
+    iframe { display: block; border: 0; }
+  </style>
+</head>
+<body>
+  <div class="bar" id="bar"></div>
+  <div class="frames" id="frames"></div>
+  <script>
+    /* Review harness: renders the local site inside fixed-width frames so
+       responsive states can be checked without resizing the browser.
+       usage: preview.html?path=/research/&w=1280,900,420&h=9000 */
+    var q = new URLSearchParams(location.search);
+    var host = q.get("host") || "http://127.0.0.1:4000";
+    var path = q.get("path") || "/";
+    var widths = (q.get("w") || "1280").split(",").map(Number);
+    var height = Number(q.get("h") || 9000);
+
+    document.getElementById("bar").textContent = host + path + "  ·  " + widths.join("px, ") + "px";
+
+    var frames = document.getElementById("frames");
+    widths.forEach(function (width) {
+      var box = document.createElement("div");
+      box.className = "frame";
+      box.style.width = width + "px";
+
+      var label = document.createElement("h2");
+      label.textContent = width + "px";
+
+      var frame = document.createElement("iframe");
+      frame.src = host + path;
+      frame.width = width;
+      frame.height = height;
+
+      box.appendChild(label);
+      box.appendChild(frame);
+      frames.appendChild(box);
+    });
+  </script>
+</body>
+</html>

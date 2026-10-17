@@ -1,6 +1,29 @@
 <footer class="site-footer">
-  <div class="wrap wrap--wide">
-    &copy; {{ site.time | date: '%Y' }} {{ site.author }} &nbsp;&middot;&nbsp;
-    <a href="https://github.com/anrghv" target="_blank" rel="noopener">GitHub</a>
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+      <div class="site-footer__id">
+        <p class="site-footer__name">{{ site.author }}</p>
+        <p class="site-footer__role">{{ site.identity.job_title }}</p>
+      </div>
+      <ul class="site-footer__links">
+        {%- for link in site.data.social %}
+        <li>
+          <a href="{{ link.url }}"{% unless link.url contains "mailto" %} target="_blank" rel="noopener"{% endunless %}>
+            {% include icon.html name=link.icon %}<span>{{ link.label }}</span>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__legal">
+        &copy; {{ site.time | date: '%Y' }} {{ site.author }}
+        <span class="site-footer__dot" aria-hidden="true">&middot;</span>
+        Built with Jekyll on GitHub Pages
+      </p>
+      <a class="site-footer__to-top" href="#top">
+        <span>Back to top</span>{% include icon.html name="arrow-up" %}
+      </a>
+    </div>
   </div>
 </footer>

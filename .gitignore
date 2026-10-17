@@ -3,3 +3,12 @@ _site/
 .jekyll-metadata
 vendor/
 .bundle/
+
+# Windows / macOS noise
+*:Zone.Identifier
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Local tooling
+node_modules/

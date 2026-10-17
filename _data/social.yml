@@ -1,12 +1,18 @@
+# Contact links. Order here is the order shown on /contact/ and in the footer.
+# `icon` matches a name in _includes/icon.html
 - label: Email
   value: anuj.ehep@gmail.com
   url: mailto:anuj.ehep@gmail.com
+  icon: mail
 - label: GitHub
   value: github.com/anrghv
   url: https://github.com/anrghv
+  icon: github
 - label: LinkedIn
   value: anuj-raghav252
   url: https://www.linkedin.com/in/anuj-raghav252
+  icon: linkedin
 - label: ORCID
   value: 0009-0004-6667-0434
   url: https://orcid.org/0009-0004-6667-0434
+  icon: orcid

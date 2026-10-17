@@ -1,43 +1,62 @@
 ---
 layout: page
-title: "Publications & Talks"
-eyebrow: Publications
-lead: "Selected talks, theses, and academic contributions."
+title: "Talks & Publications"
+eyebrow: "Talks & Publications"
+lead: "Talks, theses, and academic contributions."
 description: "Talks and publications by Anuj Raghav."
 permalink: /publications/
 ---
 
-<div class="pub-group__title">Talks</div>
-{% assign talks = site.talks | sort: 'year' | reverse %}
-{% for t in talks %}
-<div class="pub-item">
-  <div class="pub-item__year">{{ t.date_label | default: t.year }}</div>
-  <div>
-    <div class="pub-item__title">{{ t.title }}</div>
-    <div class="pub-item__meta">{{ t.authors }} — {{ t.venue }}</div>
-    <div class="tags">
-      <span class="tag">{{ t.type }}</span>
-      {% for tag in t.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
-      {% if t.upcoming %}<span class="tag">Upcoming</span>{% endif %}
-    </div>
-  </div>
-</div>
-{% endfor %}
+{%- assign talks = site.talks | sort: "date" | reverse -%}
+{%- assign pubs = site.publications | sort: "year" | reverse -%}
 
-<div class="pub-group__title">Theses</div>
-{% assign pubs = site.publications | sort: 'year' | reverse %}
-{% for p in pubs %}
-<div class="pub-item">
-  <div class="pub-item__year">{{ p.year }}</div>
-  <div>
-    <div class="pub-item__title">{{ p.title }}</div>
-    <div class="pub-item__meta">{{ p.authors }} — {{ p.venue }}</div>
-    <div class="tags">
-      <span class="tag">{{ p.type }}</span>
-      {% for tag in p.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
-    </div>
+{% if talks.size > 0 %}
+<section class="section section--tight">
+  <div class="section__head">
+    <h2 class="section__title">Talks</h2>
+    <span class="section__count">{{ talks.size }}</span>
   </div>
-</div>
-{% endfor %}
+  <ol class="pub-list">
+    {% for talk in talks %}
+    <li class="pub-item" data-reveal>
+      <div class="pub-item__year">{{ talk.date_label | default: talk.year | strip }}</div>
+      <div class="pub-item__body">
+        <p class="pub-item__title">{{ talk.title }}</p>
+        <p class="pub-item__meta">{{ talk.authors }} — {{ talk.venue }}</p>
+        <ul class="tags">
+          <li class="tag tag--accent">{{ talk.type }}</li>
+          {% for tag in talk.tags %}<li class="tag">{{ tag }}</li>{% endfor %}
+          {% if talk.upcoming %}<li class="tag tag--live">Upcoming</li>{% endif %}
+        </ul>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
 
-<p style="margin-top:2.5rem; color:var(--ink-soft); font-size:0.92rem;">More publications and preprints will be listed here as the CHEP proceedings and HSF-India reports become available.</p>
+{% if pubs.size > 0 %}
+<section class="section section--tight">
+  <div class="section__head">
+    <h2 class="section__title">Theses</h2>
+    <span class="section__count">{{ pubs.size }}</span>
+  </div>
+  <ol class="pub-list">
+    {% for pub in pubs %}
+    <li class="pub-item" data-reveal>
+      <div class="pub-item__year">{{ pub.year }}</div>
+      <div class="pub-item__body">
+        <p class="pub-item__title">{{ pub.title }}</p>
+        <p class="pub-item__meta">{{ pub.authors }} — {{ pub.venue }}</p>
+        <ul class="tags">
+          <li class="tag tag--accent">{{ pub.type }}</li>
+          {% for tag in pub.tags %}<li class="tag">{{ tag }}</li>{% endfor %}
+        </ul>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
+
+<p class="note">More publications and preprints will be listed here as the CHEP proceedings and HSF-India reports become available.</p>

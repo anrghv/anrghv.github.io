@@ -1,40 +1,112 @@
 ---
 layout: default
 ---
-<div class="wrap">
-  <section class="hero">
-    <span class="page-header__eyebrow">{{ page.eyebrow }}</span>
-    <h1>{{ page.title }}</h1>
-    <p class="hero__role">{{ page.role }}</p>
-    <div class="hero__actions">
-      {% for link in page.actions %}
-        <a href="{{ link.url }}" class="btn{% if link.primary %} btn--primary{% endif %}"
-           {% if link.external %}target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
-      {% endfor %}
-    </div>
-  </section>
+{%- assign latest_talk = site.talks | sort: "date" | reverse | first -%}
+{%- assign latest_pub = site.publications | sort: "year" | reverse | first -%}
 
-  <article>
+<section class="hero{% unless page.portrait %} hero--text{% endunless %}">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__text">
+      {% if page.eyebrow %}<span class="eyebrow" data-reveal>{{ page.eyebrow }}</span>{% endif %}
+      <h1 class="hero__name" data-reveal>{{ page.title }}</h1>
+      {% if page.role %}<p class="hero__role" data-reveal>{{ page.role }}</p>{% endif %}
+
+      {% if page.actions %}
+      <div class="hero__actions" data-reveal>
+        {% for link in page.actions %}
+        <a class="btn{% if link.primary %} btn--primary{% endif %}"
+           href="{% if link.url contains '://' or link.url contains 'mailto:' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"
+           {% if link.external %}target="_blank" rel="noopener"{% endif %}>
+          <span>{{ link.label }}</span>
+          {% if link.primary %}{% include icon.html name="arrow-right" %}{% endif %}
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <ul class="social-row" data-reveal>
+        {% for link in site.data.social %}
+        <li>
+          <a class="social-row__link" href="{{ link.url }}"{% unless link.url contains "mailto" %} target="_blank" rel="noopener"{% endunless %} aria-label="{{ link.label }}">
+            {% include icon.html name=link.icon %}<span class="social-row__label">{{ link.label }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    {% if page.portrait %}
+    <figure class="hero__portrait" data-reveal>
+      <img src="{{ page.portrait.image | relative_url }}" width="642" height="708"
+           alt="{{ page.portrait.alt | default: site.author }}" decoding="async">
+      {% if page.portrait.caption %}
+      <figcaption class="hero__caption">{{ page.portrait.caption }}</figcaption>
+      {% endif %}
+    </figure>
+    {% endif %}
+  </div>
+</section>
+
+<div class="wrap">
+  <article class="prose" data-reveal>
     {{ content }}
   </article>
 
-  {% if page.facts %}
-  <div class="info-grid">
-    {% for fact in page.facts %}
-      <div>
-        <div class="info-grid__label">{{ fact.label }}</div>
-        <div class="info-grid__value">{{ fact.value }}</div>
-      </div>
-    {% endfor %}
-  </div>
+  {% if page.currently %}
+  <section class="section" data-reveal>
+    <div class="section__head">
+      <h2 class="section__title">Currently</h2>
+    </div>
+    <ul class="now-list">
+      {% for item in page.currently %}
+      <li>{% include icon.html name="sparkle" %}<span>{{ item }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
   {% endif %}
 
   {% if page.interests %}
-  <div>
-    <div class="info-grid__label" style="margin-bottom:0.6rem;">Research Interests</div>
-    <div class="tags">
-      {% for interest in page.interests %}<span class="tag">{{ interest }}</span>{% endfor %}
+  <section class="section" data-reveal>
+    <div class="section__head">
+      <h2 class="section__title">Research interests</h2>
     </div>
-  </div>
+    <ul class="tags">
+      {% for interest in page.interests %}<li class="tag">{{ interest }}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if latest_talk or latest_pub %}
+  <section class="section" data-reveal>
+    <div class="section__head">
+      <h2 class="section__title">Selected work</h2>
+      <a class="section__link" href="{{ '/publications/' | relative_url }}">
+        <span>All talks &amp; publications</span>{% include icon.html name="arrow-right" %}
+      </a>
+    </div>
+    <ul class="mini-list">
+      {% if latest_talk %}
+      <li class="mini-item">
+        <span class="mini-item__kind">Talk</span>
+        <div class="mini-item__body">
+          <p class="mini-item__title">{{ latest_talk.title }}</p>
+          <p class="mini-item__meta">{{ latest_talk.venue }}{% if latest_talk.date_label %} &middot; {{ latest_talk.date_label }}{% endif %}</p>
+        </div>
+        <span class="mini-item__year">{{ latest_talk.year }}</span>
+      </li>
+      {% endif %}
+      {% if latest_pub %}
+      <li class="mini-item">
+        <span class="mini-item__kind">Thesis</span>
+        <div class="mini-item__body">
+          <p class="mini-item__title">{{ latest_pub.title }}</p>
+          <p class="mini-item__meta">{{ latest_pub.venue }}</p>
+        </div>
+        <span class="mini-item__year">{{ latest_pub.year }}</span>
+      </li>
+      {% endif %}
+    </ul>
+  </section>
   {% endif %}
 </div>

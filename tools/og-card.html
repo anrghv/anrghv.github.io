@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Open Graph card — 1200×630</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #fcfbf8;
+      color: #14161a;
+      font-family: Inter, sans-serif;
+    }
+    .glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(620px 430px at 90% -12%, rgba(164, 56, 42, 0.22), transparent 62%),
+        radial-gradient(520px 360px at 2% -6%, rgba(43, 95, 208, 0.14), transparent 68%),
+        radial-gradient(380px 300px at 48% 110%, rgba(206, 152, 60, 0.20), transparent 70%);
+    }
+    .mark {
+      position: absolute;
+      top: 62px;
+      left: 74px;
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 17px;
+      background: linear-gradient(140deg, #b8452f, #7d2618);
+      color: #fff;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 25px;
+      font-weight: 700;
+    }
+    .eyebrow {
+      position: absolute;
+      top: 170px;
+      left: 74px;
+      color: #a4382a;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+    }
+    h1 {
+      position: absolute;
+      top: 198px;
+      left: 74px;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 84px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .role {
+      position: absolute;
+      top: 302px;
+      left: 76px;
+      width: 640px;
+      color: #56524b;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 26px;
+      font-style: italic;
+      line-height: 1.35;
+    }
+    .rule {
+      position: absolute;
+      top: 402px;
+      left: 76px;
+      width: 116px;
+      height: 2px;
+      background: #a4382a;
+      opacity: 0.5;
+    }
+    .meta {
+      position: absolute;
+      top: 428px;
+      left: 76px;
+      width: 640px;
+      color: #56524b;
+      font-size: 21px;
+      line-height: 1.62;
+    }
+    .meta strong { color: #14161a; font-weight: 600; }
+    .url {
+      position: absolute;
+      bottom: 58px;
+      left: 76px;
+      color: #8b857b;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 19px;
+    }
+    .photo {
+      position: absolute;
+      top: 62px;
+      right: 74px;
+      width: 336px;
+      height: 506px;
+      border: 1px solid #e8e2d6;
+      border-radius: 22px;
+      object-fit: cover;
+      object-position: 50% 18%;
+      box-shadow: 0 34px 60px -32px rgba(20, 22, 26, 0.5);
+    }
+    .chip {
+      position: absolute;
+      right: 96px;
+      bottom: 86px;
+      padding: 8px 17px;
+      border: 1px solid #e8e2d6;
+      border-radius: 999px;
+      background: rgba(252, 251, 248, 0.92);
+      color: #56524b;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 14px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="mark">AR</div>
+  <div class="eyebrow">Experimental High Energy Physics</div>
+  <h1>Anuj Raghav</h1>
+  <div class="role">PhD researcher<br>University of Delhi · CMS Experiment, CERN</div>
+  <div class="rule"></div>
+  <div class="meta">
+    <strong>Higgs analyses</strong> with the CMS Experiment at CERN<br>
+    Machine learning for signal–background separation
+  </div>
+  <div class="url">anrghv.github.io</div>
+  <img class="photo" src="../Images/image.jpeg" alt="">
+  <div class="chip">CMS · CERN</div>
+</body>
+</html>
