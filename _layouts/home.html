@@ -1,24 +1,16 @@
 ---
 layout: default
 ---
-{%- assign latest_talk = site.talks | sort: "year" | reverse | first -%}
+{%- assign latest_talk = site.talks | sort: "date" | reverse | first -%}
 {%- assign latest_pub = site.publications | sort: "year" | reverse | first -%}
 
-<section class="hero">
+<section class="hero{% unless page.portrait %} hero--text{% endunless %}">
   <div class="hero__glow" aria-hidden="true"></div>
   <div class="hero__inner">
     <div class="hero__text">
       {% if page.eyebrow %}<span class="eyebrow" data-reveal>{{ page.eyebrow }}</span>{% endif %}
       <h1 class="hero__name" data-reveal>{{ page.title }}</h1>
       {% if page.role %}<p class="hero__role" data-reveal>{{ page.role }}</p>{% endif %}
-
-      {% if page.chips %}
-      <ul class="hero__chips" data-reveal>
-        {% for chip in page.chips %}
-        <li class="chip">{% if chip.icon %}{% include icon.html name=chip.icon %}{% endif %}<span>{{ chip.text }}</span></li>
-        {% endfor %}
-      </ul>
-      {% endif %}
 
       {% if page.actions %}
       <div class="hero__actions" data-reveal>

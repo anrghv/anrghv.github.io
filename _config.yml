@@ -1,8 +1,8 @@
 title: "Anuj Raghav"
 tagline: "Experimental High Energy Physics"
 description: >-
-  Anuj Raghav — PhD researcher in Experimental High Energy Physics at the
-  University of Delhi, working with the CMS Experiment at CERN. HSF-India Fellow.
+  Anuj Raghav — PhD student in Experimental High Energy Physics at the
+  University of Delhi, working with the CMS Experiment at CERN.
 author: "Anuj Raghav"
 email: anuj.ehep@gmail.com
 url: "https://anrghv.github.io"
@@ -11,7 +11,7 @@ baseurl: ""
 # ── Identity ───────────────────────────────────────────
 # Drives the structured data (schema.org Person) and the social preview card.
 identity:
-  job_title: "PhD Researcher, Experimental High Energy Physics"
+  job_title: "PhD Student, Experimental High Energy Physics"
   location: "Delhi, India"
   affiliation: "University of Delhi"
   experiment: "CMS Experiment, CERN"

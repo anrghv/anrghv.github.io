@@ -20,18 +20,3 @@ description: "Contact — Anuj Raghav"
   </li>
   {% endfor %}
 </ul>
-
-<div class="panel">
-  <div class="panel__row">
-    <span class="panel__label">Affiliation</span>
-    <span class="panel__value">{{ site.identity.affiliation }} · {{ site.identity.experiment }}</span>
-  </div>
-  <div class="panel__row">
-    <span class="panel__label">Location</span>
-    <span class="panel__value">{{ site.identity.location }}</span>
-  </div>
-  <div class="panel__row">
-    <span class="panel__label">ORCID</span>
-    <span class="panel__value"><a href="https://orcid.org/{{ site.identity.orcid }}">{{ site.identity.orcid }}</a></span>
-  </div>
-</div>

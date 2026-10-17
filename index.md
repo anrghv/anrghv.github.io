@@ -2,25 +2,14 @@
 layout: home
 title: Anuj Raghav
 eyebrow: About
-role: PhD, Experimental High Energy Physics · University of Delhi
-description: "Anuj Raghav — PhD researcher in Experimental High Energy Physics at the University of Delhi, working with the CMS Experiment at CERN."
-portrait:
-  image: /Images/image.jpeg
-  alt: "Anuj Raghav"
-  caption: "CMS Experiment · CERN"
-chips:
-  - icon: pin
-    text: Delhi, India
-  - icon: sparkle
-    text: HSF-India Fellow
+role: PhD Student, Experimental High Energy Physics. University of Delhi
+description: "Anuj Raghav — PhD student in Experimental High Energy Physics at the University of Delhi."
 actions:
   - label: View research
     url: /research/
     primary: true
   - label: Publications
     url: /publications/
-  - label: Email me
-    url: mailto:anuj.ehep@gmail.com
 facts:
   - label: Position
     value: PhD student, Experimental HEP
@@ -42,7 +31,7 @@ interests:
 
 I am a PhD student in Experimental High Energy Physics at the University of Delhi, working with the CMS Experiment at CERN. I currently work on Higgs analyses using Boosted Decision Trees (BDTs). I completed both my undergraduate and master's studies in Physics at the same institution.
 
-Before my PhD, I was an HSF-India Fellow, supported by the National Science Foundation and Princeton University. There I developed a complete, reproducible analysis pipeline for the Higgs to WW process in the electron–muon final state using CMS Open Data. The project aimed to give early-career researchers entering High Energy Physics a structured, practical resource.
+Before my PhD, I worked on a project supported by the National Science Foundation and Princeton University. There I developed a complete, reproducible analysis pipeline for the Higgs to WW process in the electron–muon final state using CMS Open Data. The project aimed to give early-career researchers entering High Energy Physics a structured, practical resource.
 
 Earlier, for my master's thesis at the University of Delhi, I analysed the Drell-Yan process at CMS, studying Z to electron-positron production as a precision QCD benchmark.
 

@@ -1,6 +1,6 @@
 # anrghv.github.io
 
-Personal site of **Anuj Raghav** — PhD researcher in Experimental High Energy Physics,
+Personal site of **Anuj Raghav** — PhD student in Experimental High Energy Physics,
 University of Delhi · CMS Experiment, CERN.
 
 Static site built with Jekyll and published by GitHub Pages straight from `main`:
@@ -44,14 +44,16 @@ tools/                 review helpers — never published (excluded in _config.y
 ## Editing content
 
 - **Nav** — reorder or add items in `_config.yml` under `nav:`. Nothing else to touch.
-- **Hero (About page)** — `index.md` front matter: `portrait`, `chips`, `actions`,
-  `facts`, `currently`, `interests`. The prose below it is plain Markdown.
+- **Hero (About page)** — `index.md` front matter: `actions`, `facts`, `currently`,
+  `interests` (plus an optional `portrait`, which renders next to the text). The prose
+  below it is plain Markdown.
 - **A research project** — copy any file in `_research/`. Fields: `order`, `eyebrow`,
   `title`, `subtitle`, `status`, `links`, `overview`, `highlights`, `implementation`, `tags`.
   `research.md` renders them; the "What I'm curious about" cards come from its own
   `curious:` front matter.
 - **A talk / thesis / publication** — add a file to `_talks/` or `_publications/` with
-  `year`, `title`, `authors`, `venue`, `type`, `tags` (and `date_label`, `upcoming` for talks).
+  `year`, `title`, `authors`, `venue`, `type`, `tags`. Talks also take a `date` (orders the
+  list, newest first), a `date_label` (what readers see, e.g. `3 Oct 2026`) and `upcoming`.
 - **Contact links** — `_data/social.yml`; the `icon:` value must match a name in
   `_includes/icon.html`. These feed both the contact page and the footer.
 - **Structured data / social previews** — `_config.yml` under `identity:` and `og_image:`.

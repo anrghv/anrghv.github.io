@@ -7,7 +7,7 @@ description: "Talks and publications by Anuj Raghav."
 permalink: /publications/
 ---
 
-{%- assign talks = site.talks | sort: "year" | reverse -%}
+{%- assign talks = site.talks | sort: "date" | reverse -%}
 {%- assign pubs = site.publications | sort: "year" | reverse -%}
 
 {% if talks.size > 0 %}
